@@ -72,7 +72,6 @@
      ![Issue模板界面展示](./pic/github-operation-guide3.png)
 3. **如果没有模板**
    - 直接进入Issue编辑页面
-   - 你需要按照我们提供的模板自行填写
 
 > [!TIP]
 > 如果有模板但没有合适的模板，可以使用Blank Issue，这在所有带模板的仓库中都是自带的空Issue模板
@@ -237,8 +236,9 @@ Markdown中插入图片的语法是\!\[图片描述\]\(图片地址\)，但是Gi
    - 包括新回复、状态变更等
 
 2. **网站通知**
-   - 点击GitHub右上角的通知图标（🔔）
-   - 查看所有相关通知
+   - 点击GitHub右上角的通知图标，三个通知图标分别表示：Issues、Pull Requests、Notifications
+     ![通知图标](./pic/github-operation-guide12.png)
+   - 点击Issues图标，可以查看所有与你相关的Issues
 
 ### 回复互动
 
