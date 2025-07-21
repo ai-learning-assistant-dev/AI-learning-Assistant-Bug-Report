@@ -1,0 +1,103 @@
+name: 🐛 Bug报告
+description: 报告软件错误，帮助我们改进AI学习助手
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你报告这个bug！请详细填写以下信息，这将帮助我们更快地定位和解决问题。
+
+  - type: input
+    id: summary
+    attributes:
+      label: Bug概述
+      description: 用一句话简洁地描述这个bug
+      placeholder: 例如：启动器中的插件更新按钮无法点击
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请详细描述如何复现这个问题（如果问题是偶发的请尽可能描述触发条件）
+      placeholder: |
+        1. 打开启动器
+        2. 点击“学习助手阅读器”
+        3. 对某一个插件点击更新
+        4. 发现点击后没有任何效果
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为
+      description: 描述你期望应该发生什么
+      placeholder: 例如：点击更新后应该会下载新版本插件并更新到本地
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+      description: 描述实际发生了什么
+      placeholder: 例如：点击按钮后本地插件并没有被更新
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      description: 你使用的操作系统
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS Ventura (13.x)
+        - macOS Monterey (12.x)
+        - macOS Big Sur (11.x)
+        - Linux（如Ubuntu、Debian、Fedora、Arch等）
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: obsidian-version
+    attributes:
+      label: obsidian版本
+      description: 请提供具体的obsidian版本号（可以通过"设置"-"关于"-"应用"-"当前版本"）
+      placeholder: 例如：v1.8.10
+
+  - type: input
+    id: launcher-version
+    attributes:
+      label: 启动器版本
+      description: 请提供具体的启动器版本号
+      placeholder: 例如：v1.0.0
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: 补充信息
+      description: 任何其他有助于理解问题的信息
+      placeholder: |
+        - 相关插件版本
+        - 错误信息截图
+        - 控制台报错
+        - 其他相关信息
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 确认项目
+      description: 请确认你已经完成以下检查
+      options:
+        - label: 我已经搜索过现有的issues，确认这不是重复报告
+          required: true
+        - label: 我已经阅读了项目的贡献指南
+          required: true
+        - label: 我提供的信息是准确和完整的
+          required: true

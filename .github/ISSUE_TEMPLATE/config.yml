@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 社区讨论交流
+    url: https://github.com/ai-learning-assistant-dev/AI-learning-Assistant-Bug-Report/discussions
+    about: 学习交流、经验分享、问答互助 - 新手友好的学习社区
+  - name: 📚 查看教程文档
+    url: https://github.com/ai-learning-assistant-dev/AI-learning-Assistant-Bug-Report/blob/main/README.md
+    about: 查看完整的Issues提交指南和教程
+  - name: 🔍 搜索已有Issues
+    url: https://github.com/ai-learning-assistant-dev/AI-learning-Assistant-Bug-Report/issues
+    about: 搜索是否已有相似问题，避免重复提交
