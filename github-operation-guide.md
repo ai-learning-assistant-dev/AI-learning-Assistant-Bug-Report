@@ -236,7 +236,7 @@ Markdown中插入图片的语法是\!\[图片描述\]\(图片地址\)，但是Gi
    - 包括新回复、状态变更等
 
 2. **网站通知**
-   - 点击GitHub右上角的通知图标，三个通知图标分别表示：Issues、Pull Requests、Notifications
+   - GitHub右上角有三个通知图标，三个通知图标分别表示：Issues、Pull Requests、Notifications
      ![通知图标](./pic/github-operation-guide12.png)
    - 点击Issues图标，可以查看所有与你相关的Issues
 
