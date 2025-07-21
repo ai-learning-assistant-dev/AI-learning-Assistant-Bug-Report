@@ -56,8 +56,6 @@ body:
         2. 搜索了相关的错误信息
         3. 尝试了重新安装启动器
         4. 删除了.obsidian中的插件
-      validations:
-        required: true
 
   - type: textarea
     id: expected
