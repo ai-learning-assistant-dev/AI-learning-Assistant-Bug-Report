@@ -1,0 +1,25 @@
+name: Deploy to Gitee
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  stub_issue:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        router:
+          - copilot:obsidian-copilot
+          - aloud-tts:obsidian-aloud-tts
+          - media-extended:ai-learning-assistant-media-extended
+          - launcher:ai-learning-assistant-launcher
+          - pdf2md:ai-learning-assistant-pdf2md
+    steps:
+    - name: Transfer Issue & Create Stub
+      uses: lando/transfer-issue-action@v2.1.0
+      with:
+        token: ${{ secrets.TRANSFER_ISSUE_TOKEN }}
+        router: ${{ matrix.router }}
+        create_stub: true
