@@ -47,7 +47,17 @@ body:
       placeholder: 例如：点击按钮后本地插件并没有被更新
     validations:
       required: true
-
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级
+      description: 你认为这个Bug的影响程度如何？
+      options:
+        - 可选 - 只影响无关紧要的体验
+        - 重要 - 影响部分功能的正常使用
+        - 紧急 - 问题导致功能整体不可用
+        
   - type: dropdown
     id: os
     attributes:
