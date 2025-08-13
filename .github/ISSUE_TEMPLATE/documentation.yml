@@ -1,7 +1,7 @@
 name: 📖 学习助手使用指南改进
 description: 学习助手使用指南问题或建议改进
 title: "[Docs] "
-labels: []
+labels: ["documentation"]
 type: "Task"
 body:
   - type: markdown
