@@ -1,7 +1,8 @@
 name: ✨ 功能请求
 description: 提出一个对AI学习助手的新功能或改进
 title: "[Feature] "
-labels: ["enhancement"]
+labels: []
+type: "Feature"
 body:
   - type: markdown
     attributes:

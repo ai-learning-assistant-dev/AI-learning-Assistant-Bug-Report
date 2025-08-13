@@ -1,7 +1,8 @@
 name: ❓ 提问求助
 description: 询问使用问题或寻求帮助
 title: "[Question] "
-labels: ["question"]
+labels: []
+type: "Question"
 body:
   - type: markdown
     attributes:
