@@ -8,16 +8,15 @@ jobs:
   extract:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.event.issue.body }}"
-      # - name: Extract version field
-      #   uses: actions-ecosystem/action-regex-match@v2
-      #   id: match
-      #   with:
-      #     text: "${{ github.event.issue.body }}"
-      #     regex: "ala-version:\\s*(.*)"
-      #
-      # - name: Add label based on version
-      #   if: steps.match.outputs.match != ''
-      #   uses: actions-ecosystem/action-add-labels@v1
-      #   with:
-      #     labels: ${{ steps.match.outputs.group1 }}
+      - name: Extract version field
+        uses: actions-ecosystem/action-regex-match@v2
+        id: match
+        with:
+          text: "${{ github.event.issue.body }}"
+          regex: "### AI学习助手版本\\s*(.*)"
+
+      - name: Add label based on version
+        if: steps.match.outputs.match != ''
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: ${{ steps.match.outputs.group1 }}
