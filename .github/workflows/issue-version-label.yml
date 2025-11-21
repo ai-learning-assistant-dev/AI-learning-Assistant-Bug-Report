@@ -7,6 +7,8 @@ on:
 jobs:
   extract:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - name: Extract version field
         uses: actions-ecosystem/action-regex-match@v2
