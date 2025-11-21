@@ -16,8 +16,17 @@ jobs:
           - media-extended:ai-learning-assistant-media-extended
           - launcher:ai-learning-assistant-launcher
           - pdf2md:ai-learning-assistant-pdf2md
+          - training-server:ai-learning-assistant-training-server
+          - training-front:ai-learning-assistant-training-front
+          - rtc-backend:ai-learning-assistant-rtc-backend
     steps:
+    - name: Extract tag from matrix router
+      id: extract-tag
+      run: |
+        TAG=$(echo "${{ matrix.router }}" | cut -d':' -f1)
+        echo "tag=$TAG" >> $GITHUB_OUTPUT
     - name: Transfer Issue & Create Stub
+      if: github.event.label.name == steps.extract-tag.outputs.tag
       uses: lando/transfer-issue-action@v2.1.0
       with:
         token: ${{ secrets.TRANSFER_ISSUE_TOKEN }}
