@@ -17,6 +17,7 @@ jobs:
       - name: Assign internal owner
         uses: actions-ecosystem/action-add-assignees@v1
         with:
+          github_token: ${{ secrets.ADD_LABEL_TOKEN }}
           assignees: |
             shiftonetothree 
             kang0x0 
