@@ -25,8 +25,20 @@ jobs:
       run: |
         TAG=$(echo "${{ matrix.router }}" | cut -d':' -f1)
         echo "tag=$TAG" >> $GITHUB_OUTPUT
+    - name: Check for v2.0_first_inner_test label
+      id: check-label
+      run: |
+        # 检查issue的所有标签中是否包含v2.0_first_inner_test
+        LABELS='${{ toJSON(github.event.issue.labels) }}'
+        if echo "$LABELS" | jq -e '.[] | select(.name == "v2.0_first_inner_test")' > /dev/null; then
+          echo "has_v2_label=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_v2_label=false" >> $GITHUB_OUTPUT
+        fi
     - name: Transfer Issue & Create Stub
-      if: github.event.label.name == steps.extract-tag.outputs.tag
+      if: |
+        github.event.label.name == steps.extract-tag.outputs.tag &&
+        steps.check-label.outputs.has_v2_label == 'false'
       uses: lando/transfer-issue-action@v2.1.0
       with:
         token: ${{ secrets.TRANSFER_ISSUE_TOKEN }}
