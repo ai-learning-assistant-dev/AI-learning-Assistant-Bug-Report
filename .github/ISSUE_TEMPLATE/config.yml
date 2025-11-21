@@ -1,4 +1,4 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
   - name: 💬 社区讨论交流
     url: https://github.com/ai-learning-assistant-dev/AI-learning-Assistant-Bug-Report/discussions

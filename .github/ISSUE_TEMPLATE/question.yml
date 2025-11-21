@@ -77,7 +77,7 @@ body:
       placeholder: |
         - 操作系统：Windows 11 / macOS 13.0 / Ubuntu 20.04 / 其他
         - 启动器版本：v1.0.0
-        - obsidian版本：v1.8.10
+        - obsidian版本：v1.8.10 （如果不是obsidian问题可以不提供）
         - 出错对应插件版本：v1.2.0
         - 其他相关软件版本
       render: markdown

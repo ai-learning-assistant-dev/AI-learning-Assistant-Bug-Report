@@ -80,14 +80,21 @@ body:
     attributes:
       label: obsidian版本
       description: 请提供具体的obsidian版本号（可以通过"设置"-"关于"-"应用"-"当前版本"）
-      placeholder: 例如：v1.8.10
+      placeholder: 例如：v1.8.10（如果不是obsidian问题可以不用提供）
 
-  - type: input
-    id: launcher-version
+  - type: dropdown
+    id: ala-version
     attributes:
-      label: 启动器版本
-      description: 请提供具体的启动器版本号
-      placeholder: 例如：v1.0.0
+      label: AI学习助手版本
+      description: 请提供具体的版本号（可以通过启动器确认版本）
+      options:
+        - v1.0
+        - v1.1
+        - v1.2
+        - v1.3
+        - v2.0_first_inner_test
+    validations:
+      required: true
 
   - type: textarea
     id: additional
