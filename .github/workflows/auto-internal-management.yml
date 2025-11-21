@@ -14,15 +14,11 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: Assign internal owner
-        uses: actions-ecosystem/action-add-assignees@v1
+      - name: Auto-assign Issue
+        uses: pozil/auto-assign-issue@v2.2.0
         with:
-          github_token: ${{ secrets.ADD_LABEL_TOKEN }}
-          assignees: |
-            shiftonetothree 
-            kang0x0 
-            lok-ziming
-            Jzw-2001
+          assignees: shiftonetothree,kang0x0,lok-ziming,Jzw-2001
+          allowSelfAssign: true
 
       - name: Add issue to Project
         uses: actions/add-to-project@v1.0.2
