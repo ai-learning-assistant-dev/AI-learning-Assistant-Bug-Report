@@ -2,7 +2,9 @@ name: Apply label from issue form
 
 on:
   issues:
-    types: [opened]
+    types: 
+      - opened
+      - reopened
 
 jobs:
   extract:
@@ -16,10 +18,9 @@ jobs:
         with:
           text: "${{ github.event.issue.body }}"
           regex: "### AI学习助手版本\\s*(.*)"
-
-      - name: Add label based on version
-        if: steps.match.outputs.match != ''
-        uses: actions-ecosystem/action-add-labels@v1
-        with:
-          github_token: ${{ secrets.ADD_LABEL_TOKEN }}
-          labels: ${{ steps.match.outputs.group1 }}
+      - run: gh issue edit "$NUMBER" --add-label "$LABELS"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          LABELS: triage
