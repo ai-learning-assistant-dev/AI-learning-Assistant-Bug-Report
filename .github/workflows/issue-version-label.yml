@@ -20,11 +20,8 @@ jobs:
           regex: "### AI学习助手版本\\s*(.*)"
 
       - name: Add label based on version
-        run: gh issue edit "$NUMBER" --add-label "$LABELS"
         if: steps.match.outputs.match != ''
-        env:
-          GH_TOKEN: ${{ secrets.ADD_LABEL_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-          NUMBER: ${{ github.event.issue.number }}
-          LABELS: ${{ steps.match.outputs.group1 }}
- 
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.ADD_LABEL_TOKEN }}
+          labels: ${{ steps.match.outputs.group1 }}
