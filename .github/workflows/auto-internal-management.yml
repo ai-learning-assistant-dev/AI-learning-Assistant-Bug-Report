@@ -5,11 +5,14 @@ on:
     types: 
       - labeled
       - opened
+      - reopened
 
 jobs:
   internal:
     if: github.event.label.name == 'v2.0_first_inner_test'
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - name: Assign internal owner
         uses: actions-ecosystem/action-add-assignees@v1
