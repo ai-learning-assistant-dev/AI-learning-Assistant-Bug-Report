@@ -65,6 +65,20 @@ body:
         - 重要 - 希望有，会提升使用体验
         - 紧急 - 必须有，否则无法正常使用
 
+  - type: dropdown
+    id: ala-version
+    attributes:
+      label: AI学习助手版本
+      description: 请提供具体的版本号（可以通过启动器确认版本）
+      options:
+        - v1.0
+        - v1.1
+        - v1.2
+        - v1.3
+        - v2.0_first_inner_test
+    validations:
+      required: true
+
   - type: textarea
     id: examples
     attributes:
